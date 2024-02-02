@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+       body{
+       padding: 0px;
+       margin: 0px;
+       background-color: antiquewhite;
+      }
+
+    .calculater-container{
+      background-color:black;
+      height: 500px;
+      width: 445px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     border-radius: 15px;
+     padding: 20px;
+
+}
+        .app-title{
+            text-align: center;
+        }
+        
+        .brand-name{
+         text-align: right;
+         margin-right: 40px;
+         font-weight: bold;
+         color:white;
+        }
+
+       .calculator-screen{
+        width: 400px;
+        height:50px;
+        border-radius: 10px;
+        font-size: 30px;
+        background-color: darkgray;
+       }
+       .buttons-container{
+       color: red;
+      margin-top: 20px;
+      margin-left: 30px;
+      margin-right: 30px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      }
+     .btn{
+      font-size: 30px;
+      height: 60px;
+      width: 65px;
+      margin: 5px;
+     cursor: pointer;
+    background-color: bisque;  
+   }
+   .btn-1{
+    font-size: 30px;
+      height: 60px;
+      width: 100px;
+      margin: 5px;
+     cursor: pointer;
+    background-color:greenyellow;  
+   }
+   .btn-2{
+    font-size: 30px;
+      height: 60px;
+      width: 65px;
+      margin: 5px;
+     cursor: pointer;
+    background-color: tomato;  
+   }
+   .btn-3{
+    font-size: 30px;
+      height: 60px;
+      width: 65px;
+      margin: 5px;
+     cursor: pointer;
+    background-color: greenyellow;  
+   }
+
+   .btn-4{
+    font-size: 30px;
+      height: 60px;
+      width: 65px;
+      margin: 5px;
+     cursor: pointer;
+    background-color: brown;  
+   }
+   .btn-6{
+    font-size: 30px;
+      height: 60px;
+      width: 65px;
+      margin: 2px;
+      margin-left: -21px;
+     cursor: pointer;
+    background-color: bisque; 
+  
+   }
+    </style>
+</head>
+<body>
+   <h1 class="app-title">
+    Calculator
+   </h1>
+   <div class="calculater-container">
+    <p class="brand-name">Rohan</p>
+    <input type="text"id= "input" class="calculator-screen"/>
+
+
+    <div class="buttons-container">
+        <button class="btn-2" onclick="presskey('()')">(</button>
+        <button class="btn-2"  onclick="presskey(')')">)</button>
+        <button class="btn-3"  onclick="presskey('=')">=</button>
+        <button class="btn-4"  onclick="presskey('Del')">Del</button>
+        <button class="btn-4"  onclick="presskey('Clr')">Clr</button>
+
+        <button class="btn" onclick="presskey(7)">7</button>
+        <button class="btn"  onclick="presskey(8)">8</button>
+        <button class="btn"  onclick="presskey(9)">9</button>
+        <button class="btn-2"  onclick="presskey('%')">%</button>
+        <button class="btn-2"  onclick="presskey('/')">/</button>
+
+
+        <button class="btn" onclick="presskey(4)">4</button>
+        <button class="btn"  onclick="presskey(5)">5</button>
+        <button class="btn"  onclick="presskey(6)">6</button>
+        <button class="btn-2"  onclick="presskey('*')">*</button>
+        <button class="btn-2"  onclick="presskey('-')">-</button>
+
+        <button class="btn" onclick="presskey(1)">1</button>
+        <button class="btn"  onclick="presskey(2)">2</button>
+        <button class="btn"  onclick="presskey(3)">3</button>
+        <button class="btn-2"  onclick="presskey('+')">+</button>
+        <button class="btn-2"  onclick="presskey()"></button>
+
+        <button class="btn-6" onclick="presskey('00')">00</button>
+        <button class="btn-6"  onclick="presskey(0)">0</button>
+        <button class="btn-6"  onclick="presskey('.')">.</button>
+        <button class="btn-1"  onclick="presskey()">Enter</div>
+
+    
+       
+        
+   </div>
+
+
+</body>
+
+<script>
+  function presskey(value) {
+    var inputField = document.getElementById("input");
+
+    if (value === "Clr") {
+      inputField.value = "";
+    } else if (value === "Del") {
+      inputField.value = inputField.value.slice(0, -1);
+    } else if (value === "=") {
+      try {
+        inputField.value = eval(inputField.value);
+      } catch (error) {
+        inputField.value = "Error";
+      }
+    } else {
+      inputField.value += value;
+    }
+}
+
+</script>
+
+</html>
